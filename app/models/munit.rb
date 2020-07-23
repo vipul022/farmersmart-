@@ -1,3 +1,3 @@
 class Munit < ApplicationRecord
-  has_many :listings, dependent: :destroy  
+  has_many :listings  
 end
