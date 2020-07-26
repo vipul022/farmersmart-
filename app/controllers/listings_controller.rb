@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
-  #This will allow users to view index and show page only if they are not signed in
+  # Allow users to view index and show page only if they are not signed in
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_listing, only: [:show, :edit, :update, :destroy] 
+  before_action :set_categories_and_munits, only: [:new, :edit, :create]
   def index
       #show all listings
       @listings = Listing.all
@@ -43,10 +44,15 @@ class ListingsController < ApplicationController
   end
 
   private
-  #this will find the listing from database with matching id and store that in a variable
+  # Find the listing from database with matching id and store that in a variable
   def set_listing
       id = params[:id]
       @listing = Listing.find(id)
+  end
+  #Store all categories and measurement units in variables so that they can be used in creating drop downs in form partial
+  def set_categories_and_munits
+        @categories = Category.all
+        @munits = Munit.all
   end
 
   # strong parameters allow user to create listing with explicitly permitted parameters
