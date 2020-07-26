@@ -3,13 +3,23 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+      @listings = Listing.all
   
   end
 
   def create
+      #create a listing for current user
+        @listing = current_user.listings.create(listing_params)
+        
+        if @listing.errors.any?
+            render "new"
+        else
+            redirect_to listings_path
+        end
   end
 
   def new
+      @listing = Listing.new
   end
 
   def show
