@@ -1,4 +1,7 @@
 class ListingsController < ApplicationController
+  #This will let all the users to view index and show page only
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
   
   end
