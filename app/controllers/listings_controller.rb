@@ -23,4 +23,11 @@ class ListingsController < ApplicationController
 
   def destroy
   end
+
+  private
+  # strong parameters allow user to create listing with explicitly permitted parameters
+  def listing_params
+      params.require(:listing).permit(:title, :description, :price, :quantity, :category_id, :munit_id, :photo)
+
+  end
 end
