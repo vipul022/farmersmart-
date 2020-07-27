@@ -21,7 +21,13 @@
 
 <div>
   <%= form.label :category %>
-  <%= form.collection_select :category_id, @categories, :id, :name, include_blank: true
+  <%= form.collection_select :category_id, categories, :id, :name, include_blank: true
+  %>
+</div>
+
+<div>
+  <%= form.label :measurement_unit %>
+  <%= form.collection_select :munit_id, munits, :id, :name, include_blank: true
   %>
 </div>
 
