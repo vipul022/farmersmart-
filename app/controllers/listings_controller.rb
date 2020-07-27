@@ -64,4 +64,3 @@ class ListingsController < ApplicationController
   end
 end
 
-# <ActionController::Parameters {"authenticity_token"=>"8LcaG8qCJF8y7n/xMq3fH8XaiVkSl5FBRw+1S8Tx/KF2Y+zSY7bWER3nX77v7B/PyT50B7BVIaB7vmK3s1TMqA==", "listing"=><ActionController::Parameters {"title"=>"Carrot", "price"=>"2", "quantity"=>"4", "category_id"=>"1", "munit_id"=>"1", "description"=>"Very fresh"} permitted: false>, "commit"=>"Create Listing", "controller"=>"listings", "action"=>"create"} permitted: false>
