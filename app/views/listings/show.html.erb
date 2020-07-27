@@ -1,2 +1,20 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<h2>View Listing</h2>
+
+<div class = "card">
+    <%= image_tag @listing.photo if @listing.photo.attached? %>
+    <h4><%= @listing.title %></h4>
+    <p>Price:<%=number_to_currency(@listing.price)%></p>
+    <p>Quantity:<%=@listing.munit.name  %></p>
+    <p>Category:<%=@listing.category.name  %></p>
+    <h6>Description:<%=@listing.description  %></h6>
+    <h6>Location: <%= @listing.user.address.suburb %>
+    <div>
+    <%= link_to "Edit", edit_listing_path(@listing.id) %>
+    <%= link_to "Delete", listing_path(@listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+
+     
+</div>
+
+<%= link_to "Back", :back %>
