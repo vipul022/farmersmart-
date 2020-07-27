@@ -2,11 +2,11 @@
 
 
 <%= form_with model: listing, local: true do |form| %>
-
 <div>
   <%= form.label :title %>
   <%= form.text_field :title %>
 </div>
+
 
 
 <div>
@@ -17,6 +17,12 @@
 <div>
   <%= form.label :quantity %>
   <%= form.number_field :quantity, min: 0 %>
+</div>
+
+<div>
+  <%= form.label :category %>
+  <%= form.collection_select :category_id, @categories, :id, :name, include_blank: true
+  %>
 </div>
 
 <div>
