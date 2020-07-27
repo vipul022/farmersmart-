@@ -1,4 +1,9 @@
-<h2>Create a Listing</h2>
+
+<% if listing.errors.any? %>
+      <% listing.errors.full_messages.each do |error| %>
+          <p><%= error %> </p>
+      <% end %>
+<% end %> 
 
 
 <%= form_with model: listing, local: true do |form| %>
