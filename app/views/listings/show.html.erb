@@ -10,10 +10,11 @@
     <h6>Location: <%= @listing.user.address.suburb %>
     <div>
     <%= link_to "Edit", edit_listing_path(@listing.id) %>
-    <%= link_to "Delete", listing_path(@listing.id), method: :delete %>
+    <%= link_to "Delete", listing_path(@listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
 
 
+     
 </div>
 
 <%= link_to "Back", :back %>
