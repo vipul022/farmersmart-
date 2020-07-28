@@ -10,11 +10,9 @@
     <h6>Location: <%= @listing.user.address.suburb %>
     
     <div>
-        <% if user_signed_in? && @listing.user.id != current_user.id %>
-        <%= link_to "Meet the Farmer", user_path(@listing.user.id), :method => "get"  %>
-        <% end %>
-      
-
+        
+        <%= link_to "Meet the Farmer", user_path(@listing.user.id)  %>
+        
 
     </div>
     <div class="show-edit-delete">
@@ -23,10 +21,12 @@
       <%= link_to "Delete", listing_path(@listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
     </div>
+     
+</div>
+<%= link_to "Back", :back %>
+      
+
+
    
 
 
-     
-</div>
-
-<%= link_to "Back", :back %>
