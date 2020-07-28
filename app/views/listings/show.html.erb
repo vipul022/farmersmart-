@@ -9,8 +9,11 @@
     <h6>Description:<%=@listing.description  %></h6>
     <h6>Location: <%= @listing.user.address.suburb %>
     <div>
-    <%= link_to "Edit", edit_listing_path(@listing.id) %>
-    <%= link_to "Delete", listing_path(@listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class="show-edit-delete">
+    <% if can? :edit, @listing %>
+      <%= link_to "Edit", edit_listing_path(@listing.id) %>
+      <%= link_to "Delete", listing_path(@listing.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     </div>
 
 
