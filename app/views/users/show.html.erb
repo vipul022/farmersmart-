@@ -1,3 +1,9 @@
 <h2>Heloo<h2>
+<div class ="card-user">
+<%= image_tag(@user.profile_pic, :class =>  "img-user")if @user.profile_pic.attached? %>
 
-<%= image_tag @user.profile_pic if @user.profile_pic.attached? %>
+<h3><%= @user.first_name %></h3>
+<p><%= @user.bio %> </p>
+<p>Suburb: <%= @user.address.suburb %> </p>
+</div>
+
