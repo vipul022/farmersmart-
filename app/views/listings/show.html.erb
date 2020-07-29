@@ -10,12 +10,12 @@
     <h6>Description:<%=@listing.description  %></h6>
     <h6>Location: <%= @listing.user.address.suburb %>
     
-    <div>
         
+    <div>
         <%= link_to "Meet the Farmer", user_path(@listing.user.id)  %>
+    </div>
         
 
-    </div>
     <div class="show-edit-delete">
     <% if can? :edit, @listing %>
       <%= link_to "Edit",  edit_listing_path(@listing.id) %>

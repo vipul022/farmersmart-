@@ -14,6 +14,10 @@
       <% end %>
    </ol>
 
+<%# <%= link_to "Edit your profile"   %>
+<% if user_signed_in? && current_user.id == @user.id%>
+<a class="edit-user" href="/users/edit">Edit your profile</a>
+<% end %>
 </div>
 
 <%= link_to "Back", :back %>
