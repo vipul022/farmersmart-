@@ -4,7 +4,7 @@
 
 <h5><%= @user.first_name %></h5>
 <p><%= @user.bio %> </p>
-<p><strong>Suburb:</strong> <%= @user.address.suburb %> </p>
+<p><strong>Address:</strong> <%= @user.address.street %>, <%= @user.address.suburb %>,<%= @user.address.city %>(<%= @user.address.state %>) </p>
 <p><strong>Listings:</strong> </p>
 
    <ol>
@@ -16,9 +16,5 @@
 
 </div>
 
-<ol>
-  <% @user_listings.each do |listing| %>
-    <li><%= link_to listing.title, listing_path(listing) %>
-    <%= number_to_currency(listing.price) %></li>
-  <% end %>
-  </ol>
+<%= link_to "Back", :back %>
+
