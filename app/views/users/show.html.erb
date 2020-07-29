@@ -1,9 +1,24 @@
-<h2>Heloo<h2>
+
 <div class ="card-user">
 <%= image_tag(@user.profile_pic, :class =>  "img-user")if @user.profile_pic.attached? %>
 
-<h3><%= @user.first_name %></h3>
+<h5><%= @user.first_name %></h5>
 <p><%= @user.bio %> </p>
-<p>Suburb: <%= @user.address.suburb %> </p>
+<p><strong>Suburb:</strong> <%= @user.address.suburb %> </p>
+<p><strong>Listings:</strong> </p>
+
+   <ol>
+      <% @user_listings.each do |l| %>
+      <li> <%= l.title %> <%= number_to_currency(l.price)%>/<%=l.munit.name%></li>
+     
+      <% end %>
+   </ol>
+
 </div>
 
+<ol>
+  <% @user_listings.each do |listing| %>
+    <li><%= link_to listing.title, listing_path(listing) %>
+    <%= number_to_currency(listing.price) %></li>
+  <% end %>
+  </ol>
