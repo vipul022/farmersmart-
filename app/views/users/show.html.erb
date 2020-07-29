@@ -9,7 +9,7 @@
 
    <ol>
       <% @user_listings.each do |l| %>
-      <li> <%= l.title %> <%= number_to_currency(l.price)%>/<%=l.munit.name%></li>
+      <li> <%= link_to l.title, listing_path(l) %> <%= number_to_currency(l.price)%>/<%=l.munit.name%></li>
      
       <% end %>
    </ol>
