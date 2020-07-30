@@ -2,12 +2,21 @@
 
 <% @listings.each do |listing| %>
   <div class = "card">
-    <%= image_tag listing.photo if listing.photo.attached? %>
+   <%# rendered the partial for displaying image uploaded by user and if no image is displayed, default image should be displayed %>
+    <div class="index-img">
+      <%= render "set-img", listing: listing %>
+    </div>
     <h4><%= listing.title %></h4>
     <p>Price:<%=number_to_currency(listing.price)%></p>
     <p>Quantity:<%=listing.munit.name  %></p>
     <p>Category:<%=listing.category.name  %></p>
-    <%= link_to "View", listing %>
+    <%# <%= link_to "View", listing %> 
+    <%= button_to "view", listing, method: :get, class: "btn btn-primary" %>
+
+    
+   
+    
+  
     </div>
     
  <% end %> 

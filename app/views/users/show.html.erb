@@ -1,0 +1,29 @@
+
+<div class ="card-user">
+<%# <%= logic for diplaying default image for the listing if no image is attached %> 
+<% if @user.profile_pic.attached? %>
+        <%= image_tag @user.profile_pic, :class => "img-user" %>
+      <% else %>
+        <%= image_tag "farmer.jpg", :class => "img-user"  %>
+ <% end %>
+
+<h5><%= @user.first_name %></h5>
+<p><%= @user.bio %> </p>
+<p><strong>Address:</strong> <%= @user.address.street %>, <%= @user.address.suburb %>,<%= @user.address.city %>(<%= @user.address.state %>) </p>
+<p><strong>Listings:</strong> </p>
+
+   <ol>
+      <% @user_listings.each do |l| %>
+      <li> <%= link_to l.title, listing_path(l) %> <%= number_to_currency(l.price)%>/<%=l.munit.name%></li>
+     
+      <% end %>
+   </ol>
+
+<%# logic to allow user to edit his profile   %>
+<% if user_signed_in? && current_user.id == @user.id%>
+<a class="edit-user" href="/users/edit">Edit your profile</a>
+<% end %>
+</div>
+
+<%= link_to "Back", :back %>
+

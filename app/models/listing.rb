@@ -3,7 +3,13 @@ class Listing < ApplicationRecord
   belongs_to :category
   belongs_to :munit
   belongs_to :user
-  #validations 
+  #validations for listings
   validates :title, :price, :quantity, :munit, presence: true
+  #This will allow user to attach a photo to each listing
   has_one_attached :photo
+  
+
+
 end
+
+
