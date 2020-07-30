@@ -14,7 +14,7 @@
       <% end %>
    </ol>
 
-<%# <%= link_to "Edit your profile"   %>
+<%# logic to allow user to edit his profile   %>
 <% if user_signed_in? && current_user.id == @user.id%>
 <a class="edit-user" href="/users/edit">Edit your profile</a>
 <% end %>
