@@ -1,6 +1,11 @@
 
 <div class ="card-user">
-<%= image_tag(@user.profile_pic, :class =>  "img-user")if @user.profile_pic.attached? %>
+<%# <%= logic for diplaying default image for the listing if no image is attached %> 
+<% if @user.profile_pic.attached? %>
+        <%= image_tag @user.profile_pic, :class => "img-user" %>
+      <% else %>
+        <%= image_tag "farmer.jpg", :class => "img-user"  %>
+ <% end %>
 
 <h5><%= @user.first_name %></h5>
 <p><%= @user.bio %> </p>
