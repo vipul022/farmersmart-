@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-#one to many relation between user and listings and dependent: :destroy has been used to destroy all the listings of a user if user is destroyed so that it does not leave an orphan record in database
+#one to many relation between user and listings and dependent: :destroy has been used to destroy all the listings of a user if user is destroyed so that it does not leave an orphaned record in database
   has_many :listings, dependent: :destroy  
   has_one :address, dependent: :destroy 
   #nested attributes will allow to add different attributes of address table through user and update_only will allow to update all the attributes of address without providing id
