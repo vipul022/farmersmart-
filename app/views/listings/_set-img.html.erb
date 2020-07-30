@@ -1,0 +1,8 @@
+
+<%# logic for displaying image uploaded by user and if no image is displayed, default image should be displayed %>
+<% if listing.photo.attached? %>
+        <%= image_tag listing.photo %>
+      <% else %>
+        <%= image_tag "mix-veg.png" %>
+ <% end %>
+
