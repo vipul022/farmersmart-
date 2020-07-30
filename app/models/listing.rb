@@ -8,6 +8,9 @@ class Listing < ApplicationRecord
   #This will allow user to attach a photo to each listing
   has_one_attached :photo
   
+  has_many :cart_listings
+  has_many :carts, through: :cart_listings
+
 
 
 end
