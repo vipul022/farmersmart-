@@ -2,7 +2,12 @@
 
 <% @listings.each do |listing| %>
   <div class = "card">
-    <%= image_tag listing.photo if listing.photo.attached? %>
+    <%# <%= logic for diplaying default image for the listing if no image is attached %> 
+    <% if listing.photo.attached? %>
+        <%= image_tag listing.photo %>
+      <% else %>
+        <%= image_tag "mix-veg.png" %>
+ <% end %>
     <h4><%= listing.title %></h4>
     <p>Price:<%=number_to_currency(listing.price)%></p>
     <p>Quantity:<%=listing.munit.name  %></p>

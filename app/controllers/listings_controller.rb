@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_listing, only: [:show,  :edit, :update, :destroy] 
   before_action :set_categories_and_munits, only: [:new, :edit, :create]
+  
   #this will load the code in the ability model(cancancan)
   load_and_authorize_resource
   def index
@@ -58,6 +59,8 @@ class ListingsController < ApplicationController
         @categories = Category.all
         @munits = Munit.all
   end
+
+  
 
   # strong parameters allow user to create listing with explicitly permitted parameters
   def listing_params
