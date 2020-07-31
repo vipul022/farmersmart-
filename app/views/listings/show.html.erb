@@ -17,7 +17,10 @@
     <div>
         <% if user_signed_in? && @listing.user.id != current_user.id %>
           <%= link_to "Visit the farm", user_path(@listing.user.id)  %><br>
-          <%= link_to "Add to Cart", carts_path %>
+          <%= link_to "Add to Cart", carts_path(listing_id: @listing.id), method: :post %>
+      <%# listing_id: @listing.id), method: :post have been added to link because by default link is get request and in this case we are adding a listing to cart which is a post request      %>
+
+        
         <% end %>  
     </div>
 
