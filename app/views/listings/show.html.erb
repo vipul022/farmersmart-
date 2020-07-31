@@ -13,10 +13,15 @@
     <h6>Description:<%=@listing.description  %></h6>
     <h6>Location: <%= @listing.user.address.suburb %>
     
-        
+    <%# logic for displaying the links only if user in signed in and listing does not belongs to current user     %>
     <div>
-        <%= link_to "Visit the farm", user_path(@listing.user.id)  %>
+        <% if user_signed_in? && @listing.user.id != current_user.id %>
+          <%= link_to "Visit the farm", user_path(@listing.user.id)  %><br>
+          <%= link_to "Add to Cart", carts_path %>
+        <% end %>  
     </div>
+
+       
         
 
     <div class="show-edit-delete">

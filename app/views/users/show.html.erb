@@ -21,7 +21,7 @@
 
 <%# logic to allow user to edit his profile   %>
 <% if user_signed_in? && current_user.id == @user.id%>
-<a class="edit-user" href="/users/edit">Edit your profile</a>
+  <a class="edit-user" href="/users/edit">Edit your profile</a>
 <% end %>
 </div>
 
