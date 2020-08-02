@@ -1,8 +1,8 @@
 class CartsController < ApplicationController
-#this action will store all the listings that have been added to cart by current user in a variable that will be used in html view.  
+#this action will store current user's cart  in a variable tha is used in html view.  
   def index
     if user_signed_in? && current_user.cart
-      @cart_listings = current_user.cart.listings
+      @cart = current_user.cart
       # p "@@@@@@@"
       # pp @cart_listings
       #  p "/////////listing"
@@ -42,21 +42,29 @@ class CartsController < ApplicationController
   def destroy
     # byebug
     cart = current_user.cart
-    # p "params", params
-    # p "DESTROY params[:id]=> ", params[:id]
+    p "params", params
+    p "DESTROY params[:id]=> ", params[:id]
     # p "params[:listing_id]=> ", params[:listing_id]
-    # cart.listings.delete(params[:listing_id])
+    # cart.listings.delete(params[:id])
+    #a = [1,2,3,4,5,6,7]
+# b = a.delete(a.find{|n| n > 4}) 
+#=> 5list
+
+#=> [1,2,3,4,6,7]
+  #  cart.listings.delete(cart.listings.find{ n})
     
-    cart.listings.delete(params[:id])
-    cart.save
-    redirect_to carts_path
+      cart.cart_listings.delete(params[:id])  
+      cart.save
+      redirect_to carts_path
+    
+    
   end
 
   private
 #method for calculating the total cost of the cart
   def total_cost
     count = 0
-    @cart_listings.each do |listing|
+    @cart.listings.each do |listing|
       count+=listing.price
     end
     return count
