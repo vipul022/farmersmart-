@@ -1,16 +1,31 @@
 class ListingsController < ApplicationController
   # Allow users to view index and show page only if they are not signed in
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_listing, only: [:show,  :edit, :update, :destroy] 
   before_action :set_categories_and_munits, only: [:new, :edit, :create]
   
   #this will load the code in the ability model(cancancan)
   load_and_authorize_resource
+  
+  def search
+  #search method will allow users to search for a listing by it's title
+      if params[:q].blank?
+        flash[:alert] = "Empty field"
+        redirect_to root_path
+      else  
+        @params = params[:q].downcase
+        
+      @listings_found = Listing.where("lower(title) LIKE?","%" + "#{@params}"+ "%")
+      end
+     
+  end
+  
   def index
       #show all listings
-      @listings = Listing.all
+      @listings = Listing.all 
   
   end
+
 
   def create
       #create a listing for current user
