@@ -1,0 +1,13 @@
+<h1>Cart</h1>
+<%# iteration through the join table cart_listings %>
+<% @cart.cart_listings.each  do |cart_listing| %>
+  <% listing = cart_listing.listing %>
+  <p><%= listing.title %> <%= number_to_currency(listing.price) %></p>
+
+  <%= link_to carts_path + "/#{cart_listing.id}", method: :delete, data: { confirm: 'Are you sure?' } do %>
+   <%= image_tag "delete.jpeg", size: "20x20" %>
+   <% end %> 
+
+   <%# <%= link_to "delete", listing_path(listing.id), method: :delete, data: { confirm: 'Are you sure?' } %> 
+<% end %>
+<h6> Total:<%=number_to_currency (@total_cost) %></h6>
