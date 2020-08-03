@@ -15,13 +15,18 @@
     
     <%# logic for displaying the links only if user in signed in and listing does not belongs to current user     %>
     <div>
-        <% if user_signed_in? && @listing.user.id != current_user.id %>
           <%= link_to "Visit the farm", user_path(@listing.user.id)  %><br>
-          <%= link_to "Add to Cart", carts_path(listing_id: @listing.id), method: :post %>
+      <% if user_signed_in? && @listing.user.id != current_user.id %>
+         
       <%# listing_id: @listing.id), method: :post have been added to link because by default link is get request and in this case we are adding a listing to cart which is a post request      %>
 
-        
-        <% end %>  
+        <%= link_to carts_path(listing_id: @listing.id), method: :post,  class: 'btn btn-light ml-1 mb-1' do %>
+          <%= image_tag 'cart.png', size: '30x30' %>
+        <% end %> 
+      <% end %>  
+
+         
+
     </div>
 
        

@@ -10,12 +10,13 @@ class ListingsController < ApplicationController
   def search
   #search method will allow users to search for a listing by it's title
       if params[:q].blank?
-        flash[:alert] = "Empty field"
+        flash[:alert] = "Field cannot be left blank"
         redirect_to root_path
       else  
         @params = params[:q].downcase
         
-      @listings_found = Listing.where("lower(title) LIKE?","%" + "#{@params}"+ "%")
+        @listings_found = Listing.where("lower(title) LIKE?","%" + "#{@params}"+ "%")
+  
       end
      
   end
@@ -30,8 +31,7 @@ class ListingsController < ApplicationController
   def create
       #create a listing for current user
         @listing = current_user.listings.create(listing_params)
-        p "**********"
-        p params
+       
 
         if @listing.errors.any?
             render "new"
