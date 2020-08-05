@@ -1,5 +1,9 @@
 class PaymentsController < ApplicationController
 
+def success
+
+end
+
 def get_stripe_id
   cart = current_user.cart
 #storing all the listings in cart in listings variable
