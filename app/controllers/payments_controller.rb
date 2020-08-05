@@ -1,7 +1,13 @@
 class PaymentsController < ApplicationController
-
+skip_before_action :verify_authenticity_token, only: [:webhook]
 def success
+ p "----=params"
+ p params 
+end
 
+def webhook
+#  p "----=params=>>>>>>>>>"
+#  p params
 end
 
 def get_stripe_id
