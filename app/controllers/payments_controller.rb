@@ -20,6 +20,7 @@ def get_stripe_id
   session_id = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     customer_email: current_user.email,
+
     line_items: line_items,
     payment_intent_data: {
       metadata: {
