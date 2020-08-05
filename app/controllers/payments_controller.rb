@@ -1,13 +1,29 @@
 class PaymentsController < ApplicationController
 skip_before_action :verify_authenticity_token, only: [:webhook]
 def success
- p "----=params"
- p params 
+ 
+
+
+
+
+
+
 end
 
 def webhook
-#  p "----=params=>>>>>>>>>"
-#  p params
+
+  payment_id= params[:data][:object][:payment_intent]
+  payment = Stripe::PaymentIntent.retrieve(payment_id)
+
+
+    user = User.find(payment.metadata.user_id)
+    cart = user.cart
+   
+    cart.destroy
+   
+
+
+  head 200
 end
 
 def get_stripe_id
@@ -44,3 +60,12 @@ def get_stripe_id
   render :json => {id: session_id, stripe_public_key: Rails.application.credentials.dig(:stripe, :public_key)}
   end
 end
+
+
+
+
+
+
+
+
+
