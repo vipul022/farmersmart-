@@ -8,8 +8,9 @@
    <%= image_tag "delete.jpeg", size: "20x20" %>
    <% end %> 
 
-   <%# <%= link_to "delete", listing_path(listing.id), method: :delete, data: { confirm: 'Are you sure?' } %> 
+  
 <% end %>
 <h6> Total:<%=number_to_currency (@total_cost) %></h6>
+<%= link_to "Checkout", "", class: "btn btn-success" %>
 
 
