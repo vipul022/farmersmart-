@@ -1,4 +1,6 @@
-<h1>Cart</h1>
+<h1>My Cart</h1>
+
+
 <%# iteration through the join table cart_listings %>
 <% @cart.cart_listings.each  do |cart_listing| %>
   <% listing = cart_listing.listing %>
@@ -10,7 +12,11 @@
 
   
 <% end %>
-<h6> Total:<%=number_to_currency (@total_cost) %></h6>
-<%= link_to "Checkout", "", class: "btn btn-success" %>
+<%# method for calculating total cost of the cart's listings %>
+  <% total_cost = @cart.cart_listings.inject(0) {|result, cart_listing| result + cart_listing.listing[:price]} %>
+
+  <h6>Total:<%=number_to_currency(total_cost)  %> </h6>
+<%= link_to "Checkout", "", id: "stripe",  class: "btn btn-success" %>
 
 
+<%= javascript_pack_tag "stripe" %>

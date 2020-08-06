@@ -5,7 +5,9 @@
   border: 2px solid, lightslategrey;
   margin: 10px;
   padding: 0 10px;
-  max-width: 30%;
+  width: 100%;
+  max-width: 30vw;
+  min-width: 200px;
 }
 .index-img img {
   width: 200px;
@@ -13,7 +15,7 @@
   background-size: cover;
 }
 
-.show-img img{
+.show-img img {
   width: 200px;
   height: 200px;
   background-size: cover;

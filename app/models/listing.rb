@@ -4,7 +4,7 @@ class Listing < ApplicationRecord
   belongs_to :munit
   belongs_to :user
   #validations for listings
-  validates :title, :price, :quantity, :munit, presence: true
+  validates :title, :price, :quantity, :munit, :category, presence: true
   #This will allow user to attach a photo to each listing
   has_one_attached :photo
   #set up many to many relation between listing and cart through join table

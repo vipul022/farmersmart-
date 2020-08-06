@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 #this action will store current user's cart  in a variable tha is used in html view.  
   def index
+  
     if user_signed_in? && current_user.cart
       @cart = current_user.cart
       # p "@@@@@@@"
@@ -10,9 +11,11 @@ class CartsController < ApplicationController
       # p params
      
     else
+     
       redirect_to listings_path
     end
-    @total_cost   = total_cost
+    # @total_cost   = total_cost
+
   end
 # if user's cart is empty, a cart can be created for the user and the completed status is set to false,in case user is already having a cart and when user click on add to cart link on the listing, the listing can be added to the cart
   def create
@@ -60,15 +63,8 @@ class CartsController < ApplicationController
     
   end
 
-  private
-#method for calculating the total cost of the cart
-  def total_cost
-    count = 0
-    @cart.listings.each do |listing|
-      count+=listing.price
-    end
-    return count
-  end
+  
+
 
 end
 
