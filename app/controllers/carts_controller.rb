@@ -14,7 +14,7 @@ class CartsController < ApplicationController
       p "HELLOOO"
       redirect_to listings_path
     end
-    @total_cost   = total_cost
+    # @total_cost   = total_cost
 
   end
 # if user's cart is empty, a cart can be created for the user and the completed status is set to false,in case user is already having a cart and when user click on add to cart link on the listing, the listing can be added to the cart
@@ -63,18 +63,8 @@ class CartsController < ApplicationController
     
   end
 
-  private
-#method for calculating the total cost of the cart
-  def total_cost
-    count = 0
-    if @cart 
-    @cart.listings.each do |listing|
-      count+=listing.price
-    end
-    return count
-   end
+  
 
-  end
 
 end
 
