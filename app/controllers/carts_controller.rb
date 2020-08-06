@@ -11,7 +11,7 @@ class CartsController < ApplicationController
       # p params
      
     else
-      p "HELLOOO"
+     
       redirect_to listings_path
     end
     # @total_cost   = total_cost
