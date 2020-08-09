@@ -1,16 +1,19 @@
-<h2>View Listing</h2>
+ 
+  <div class="container"> 
 
-<div class = "card">
+<%# <div class = "card"> %>
+<div class="card  my-3 col-md-4 col-xs-12" style="max-width: 40%; min-width: 18rem; margin: 0 auto;" >
 <%# rendered the partial for displaying image uploaded by user and if no image is displayed, default image should be displayed %>
+  <div class="card-body-show">
     <div class="show-img">
       <%= render "set-img", listing: @listing %>
     </div>  
-    <h4><%= @listing.title %></h4>
+    <h5><%= @listing.title %></h5>
     <p>Price:<%=number_to_currency(@listing.price)%></p>
     <p>Quantity:<%=@listing.munit.name  %></p>
     
     <p>Category:<%=@listing.category.name  %></p>
-    <h6>Description:<%=@listing.description  %></h6>
+    <p>Description:<%=@listing.description  %></p>
     <h6>Location: <%= @listing.user.address.suburb %>
     
     <%# logic for displaying the links only if user in signed in and listing does not belongs to current user     %>
@@ -41,6 +44,9 @@
      
 </div>
 <%= link_to "Back", :back %>
+</div>
+
+
       
 
 

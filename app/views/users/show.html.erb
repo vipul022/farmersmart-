@@ -1,5 +1,6 @@
-
-<div class ="card-user">
+<div class="container"> 
+<div class="card  my-3 col-md-4 col-xs-12" style="max-width: 40%; min-width: 18rem; margin: 0 auto;" >
+  <div class= "card-body-show">
 <%# <%= logic for diplaying default image for the listing if no image is attached %> 
 <% if @user.profile_pic.attached? %>
         <%= image_tag @user.profile_pic, :class => "img-user" %>
@@ -23,7 +24,9 @@
 <% if user_signed_in? && current_user.id == @user.id%>
   <a class="edit-user" href="/users/edit">Edit your profile</a>
 <% end %>
-</div>
 
 <%= link_to "Back", :back %>
+</div>
+</div>
+</div>
 
