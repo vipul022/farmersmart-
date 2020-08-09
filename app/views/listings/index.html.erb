@@ -11,7 +11,7 @@
             <%= render "set-img",  listing: listing %>
          </div> 
         
-        <h4><%= listing.title %></h4>
+        <h5><%= listing.title %></h5>
         <p>Price:<%=number_to_currency(listing.price)%></p>
         <p>Quantity:<%=listing.munit.name  %></p>
         <p>Category:<%=listing.category.name  %></p>
