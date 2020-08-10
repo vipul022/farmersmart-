@@ -1,22 +1,28 @@
-<h1>My Cart</h1>
-
-
+<div class="container"> 
+<div class="card  my-3 col-md-4 col-xs-12" style="max-width: 50%; min-width: 18rem; margin: 0 auto;" >
+<div class="card-body-cart">
+<h4>My Cart</h4>
 <%# iteration through the join table cart_listings %>
 <% @cart.cart_listings.each  do |cart_listing| %>
-  <% listing = cart_listing.listing %>
-  <p><%= listing.title %> <%= number_to_currency(listing.price) %></p>
+ <div class="cart_listing"> <% listing = cart_listing.listing %>
+  <p><%= listing.title %></p> 
+  <p><%= number_to_currency(listing.price) %></p>
 
   <%= link_to carts_path + "/#{cart_listing.id}", method: :delete, data: { confirm: 'Are you sure?' } do %>
    <%= image_tag "delete.jpeg", size: "20x20" %>
    <% end %> 
 
   
+</div>
 <% end %>
+
 <%# method for calculating total cost of the cart's listings %>
   <% total_cost = @cart.cart_listings.inject(0) {|result, cart_listing| result + cart_listing.listing[:price]} %>
 
   <h6>Total:<%=number_to_currency(total_cost)  %> </h6>
 <%= link_to "Checkout", "", id: "stripe",  class: "btn btn-success" %>
-
+</div>
+</div>
+</div>
 
 <%= javascript_pack_tag "stripe" %>
