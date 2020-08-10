@@ -1,3 +1,3 @@
 class Munit < ApplicationRecord
-  has_many :listings  
+  has_many :listings
 end
