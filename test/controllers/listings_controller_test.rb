@@ -35,5 +35,4 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     get listings_destroy_url
     assert_response :success
   end
-
 end
