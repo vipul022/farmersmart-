@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  # Allow users to view index and show page only if they are not signed in
+  # Allow users to view index, show and search page only if they are not signed in
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_listing, only: [:show,  :edit, :update, :destroy] 
   before_action :set_categories_and_munits, only: [:new, :edit, :create]

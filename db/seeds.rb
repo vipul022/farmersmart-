@@ -23,15 +23,3 @@ if Munit.count == 0
   end
 end
   
-# if Breed.count == 0
-#     Snake.names.each do |name|
-#       Breed.create(name: name.downcase.strip)
-#       puts "#{name} created"
-#     end
-# end
-
-#   puts"---------" 
-# for i in genres
-#   Genre.create(name: i)
-#   puts "created #{i} genre"
-# end

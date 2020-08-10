@@ -18,7 +18,7 @@ def webhook
 
     user = User.find(payment.metadata.user_id)
     cart = user.cart
-   
+   #destroying the cart after the payment has been made successfully 
     cart.destroy
    
 
@@ -42,7 +42,7 @@ def get_stripe_id
     }
     
   end
-
+#Creating a session for Stripe
   session_id = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     customer_email: current_user.email,
