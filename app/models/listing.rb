@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  # Listing associations
+  # Listing model relations
   belongs_to :category
   belongs_to :munit
   belongs_to :user

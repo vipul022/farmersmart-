@@ -6,7 +6,7 @@ class Ability
   def initialize(user)
     user ||= User.new
     can [:index, :show, :new, :create, :search], Listing
-    # added authorization for the user to edit, update and delete the listings which are created by him only
+    # added authorizations for the user to edit, update and delete the listings that belongs to user
     can [:edit, :update, :destroy], Listing, user_id: user.id
 
     # Define abilities for the passed in user here. For example:
