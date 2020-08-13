@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
   def search
     # search method will allow users to search for a listing by it's title
     if params[:q].blank?
+
       flash[:alert] = "Field cannot be left blank"
       redirect_to root_path
     else
