@@ -26,7 +26,8 @@ class CartsController < ApplicationController
 
     redirect_to carts_path
   end
-#this method will allow user to delete a particular listing from the cart
+
+  # this method will allow user to delete a particular listing from the cart
   def destroy
     cart = current_user.cart
 
