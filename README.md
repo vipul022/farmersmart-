@@ -113,18 +113,18 @@ Index page(desktop view)
 Index page(mobile view)
 ![Index page2](./app/assets/images/Indexpage_2.png)
 
-Home page(desktop view)
+Home page(mobile view)
 
 ![Landing page](./app/assets/images/landingpage.png)
 
-Home page(mobile view)
+Home page(desktop view)
 ![Landing page2](./app/assets/images/landingpage_2.png)
 
-Login page(desktop view)
+Login page(mobile view)
 
 ![Login page](./app/assets/images/loginpage.png)
 
-Login page(mobile view)
+Login page(desktop view)
 
 ![Login page](./app/assets/images/Loginpage_2.png)
 
