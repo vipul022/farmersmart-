@@ -99,51 +99,65 @@ Buyer/Consumer:
 ## Wireframes
 
 Create listing page (desktop view)
+
 ![Create listing](./app/assets/images/Createlistingform.png?)
 
 Create listing page (mobile view)
+
 ![Create listing2](./app/assets/images/Createlistingform_2.png)
 
 Index page(desktop view)
+
 ![Index page](./app/assets/images/Indexpage.png)
 
 Index page(mobile view)
 ![Index page2](./app/assets/images/Indexpage_2.png)
 
 Home page(desktop view)
+
 ![Landing page](./app/assets/images/landingpage.png)
 
 Home page(mobile view)
 ![Landing page2](./app/assets/images/landingpage_2.png)
 
 Login page(desktop view)
+
 ![Login page](./app/assets/images/loginpage.png)
 
 Login page(mobile view)
+
 ![Login page](./app/assets/images/Loginpage_2.png)
 
 Show page(desktop page)
+
 ![Show page](./app/assets/images/Showpage.png)
 
 Show page(mobile page)
+
 ![Show page2](./app/assets/images/Showpage_2.png)
 
 Sign up page(desktop view)
+
 ![Signup page](./app/assets/images/Signuppage.png)
 
 Sign up page(mobile view)
+
 ![Signup page2](./app/assets/images/Signuppage2.png)
 
 User show page(desktop view)
+
 ![User show Page](./app/assets/images/Usershowpage.png)
 
 User show page(mobile view)
+
 ![User show Page2](./app/assets/images/Usershowpage_2.png)
 
 Cart page(desktop view)
+
 ![Cart page2](./app/assets/images/cartpage1.png)
 
 Cart page(mobile view)
+
 ![Cart page](./app/assets/images/cartpage2.png)
 
 ## Entity Relationship Diagram
@@ -368,3 +382,7 @@ Before starting the development of my app, I spent some time in planning. I pres
 ![Trello3](./app/assets/images/trello3.png)
 
 ![Trello4](./app/assets/images/trello4.png)
+
+```
+The End!
+```
